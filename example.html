@@ -348,6 +348,18 @@
 		document.getElementById("yr4gp").innerHTML=numeral(yr4gp).format('0,0');
 		document.getElementById("yr5gp").innerHTML=numeral(yr5gp).format('0,0');
 
+		//gross profit margin
+		yr1gpmargin = yr1gp / yr1;
+		yr2gpmargin = yr2gp / yr2;
+		yr3gpmargin = yr3gp / yr3;
+		yr4gpmargin = yr4gp / yr4;
+		yr5gpmargin = yr5gp / yr5;
+		document.getElementById("yr1gpmargin").innerHTML=numeral(yr1gpmargin).format('0%');
+		document.getElementById("yr2gpmargin").innerHTML=numeral(yr2gpmargin).format('0%');
+		document.getElementById("yr3gpmargin").innerHTML=numeral(yr3gpmargin).format('0%');
+		document.getElementById("yr4gpmargin").innerHTML=numeral(yr4gpmargin).format('0%');
+		document.getElementById("yr5gpmargin").innerHTML=numeral(yr5gpmargin).format('0%')
+
 		//expenses
 		yr0exp = g;
 		yr1exp = yr0exp * (1+h);
@@ -373,6 +385,18 @@
 		document.getElementById("yr4op").innerHTML=numeral(yr4op).format('0,0');
 		document.getElementById("yr5op").innerHTML=numeral(yr5op).format('0,0');
 		document.getElementById("yr5opval").innerHTML=numeral(yr5op).format('$0,0');
+
+		//operating profit (EBITDA) margin
+		yr1opmargin = yr1op / yr1;
+		yr2opmargin = yr2op / yr2;
+		yr3opmargin = yr3op / yr3;
+		yr4opmargin = yr4op / yr4;
+		yr5opmargin = yr5op / yr5;
+		document.getElementById("yr1opmargin").innerHTML=numeral(yr1opmargin).format('0%');
+		document.getElementById("yr2opmargin").innerHTML=numeral(yr2opmargin).format('0%');
+		document.getElementById("yr3opmargin").innerHTML=numeral(yr3opmargin).format('0%');
+		document.getElementById("yr4opmargin").innerHTML=numeral(yr4opmargin).format('0%');
+		document.getElementById("yr5opmargin").innerHTML=numeral(yr5opmargin).format('0%');
 		
 		//interest
 		yr1int = 0;
@@ -416,11 +440,11 @@
 		yr3ni = yr3pti - yr3tax;
 		yr4ni = yr4pti - yr4tax;
 		yr5ni = yr5pti - yr5tax;
-		document.getElementById("yr1ni").innerHTML=numeral(yr1ni).format('0,0');
-		document.getElementById("yr2ni").innerHTML=numeral(yr2ni).format('0,0');
-		document.getElementById("yr3ni").innerHTML=numeral(yr3ni).format('0,0');
-		document.getElementById("yr4ni").innerHTML=numeral(yr4ni).format('0,0');
-		document.getElementById("yr5ni").innerHTML=numeral(yr5ni).format('0,0');
+		document.getElementById("yr1ni").innerHTML=numeral(yr1ni).format('$0,0');
+		document.getElementById("yr2ni").innerHTML=numeral(yr2ni).format('$0,0');
+		document.getElementById("yr3ni").innerHTML=numeral(yr3ni).format('$0,0');
+		document.getElementById("yr4ni").innerHTML=numeral(yr4ni).format('$0,0');
+		document.getElementById("yr5ni").innerHTML=numeral(yr5ni).format('$0,0');
 		document.getElementById("yr1ni2").innerHTML=numeral(yr1ni).format('$0,0');
 		document.getElementById("yr2ni2").innerHTML=numeral(yr2ni).format('$0,0');
 		document.getElementById("yr3ni2").innerHTML=numeral(yr3ni).format('$0,0');
@@ -557,22 +581,7 @@
 	  float: right;
 	  height: 26px;
 	  }
-  
-  h2 {
-      font-size: 24px;
-      text-transform: uppercase;
-      color: #303030;
-      font-weight: 600;
-      margin-bottom: 30px;
-  }
-  h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      color: #303030;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }  
-  
+    
   h6 {
 	  color: rgba(0, 0, 0, 0.38);
   }
@@ -580,49 +589,10 @@
   .container-fluid {
       padding: 60px 50px;
   }
-  .bg-grey {
-      background-color: #f6f6f6;
+  .bg-white {
+      background-color: #fff;
   }
   
-  
-  .logo-small {
-      color: #f4511e;
-      font-size: 50px;
-  }
-  .logo {
-      color: #f4511e;
-      font-size: 200px;
-  }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f4511e;
-  }
-  .carousel-indicators li {
-      border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-  }
-  .item span {
-      font-style: normal;
-  }
   .panel {
       border: 1px solid rgba(0,0,0, .12); 
       border-radius:0 !important;
@@ -638,18 +608,8 @@
       background-color: #fff !important;
       color: black;
   }
-  /*.panel-heading {
-      color: #fff !important;
-      background-color: #8BC34A !important;
-      padding: 5px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }*/
 
-  	.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+  .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
   		background-color:#689F38;
   		border-radius: 0;
 	}
@@ -663,10 +623,6 @@
   }
   .panel-footer h3 {
       font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
   }
   .panel-footer .btn {
       margin: 15px 0;
@@ -709,6 +665,17 @@
 	text-align: right;
 }
 
+.trsum {
+	border-top: 2px solid rgba(0,0,0, .12);
+}
+
+.trpercent {
+	font-style: italic;
+	font-size: 80%;
+	line-height: 80%;
+	
+}
+
 footer {
 	background-color: #8BC34A;
 }
@@ -745,6 +712,11 @@ footer {
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+	  </button>                        
       <a class="navbar-brand" href="/index.html"><img src="images/logo.png" alt="logo" style="width:100px; height:100%"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -769,7 +741,7 @@ footer {
 			<div class="panel-heading">Overview</div>
 			<div class="panel-body">
 				<p><b>Build your financial forecast:</b> Enter your <u>Assumptions</u> below and see a simple forecast in real-time. <small><a href="faq#whyforecast">Why forecast?</a></small></p>
-				<p><b>See your valuation:</b> The <u>Valuation</u> tab illustrates what your company could we worth in a few years. <small><a href="faq#collapse4">Understanding valuation</a></small></p>			
+				<p><b>See your valuation:</b> The <u>Valuation</u> tab illustrates what your company could we worth in a few years. <small><a href="faq#valuation">Understanding valuation</a></small></p>			
 				<p>We've started with real numbers from a growing SaaS company as an example.</p>
 			</div>
 		</div>
@@ -1002,7 +974,7 @@ footer {
 					  </tr>
 		
 					  <tr>
-					    <td>COGS</td>
+					    <td>(-) COGS</td>
 					    <td id="yr1cogs" class="tdvalues">Holder</td> 
 					    <td id="yr2cogs" class="tdvalues">Holder</td>
 					    <td id="yr3cogs" class="tdvalues">Holder</td>
@@ -1010,7 +982,7 @@ footer {
 					    <td id="yr5cogs" class="tdvalues">Holder</td>
 					  </tr>
 		
-					  <tr>
+					  <tr class="trsum">
 					    <td>Gross profit</td>
 					    <td id="yr1gp" class="tdvalues">Holder</td> 
 					    <td id="yr2gp" class="tdvalues">Holder</td>
@@ -1018,9 +990,18 @@ footer {
 					    <td id="yr4gp" class="tdvalues">Holder</td>
 					    <td id="yr5gp" class="tdvalues">Holder</td>
 					  </tr>
+
+					  <tr class="trpercent">
+					  	<td>Gross margin</td>
+					  	<td id="yr1gpmargin" class="tdvalues">Holder</td> 
+					    <td id="yr2gpmargin" class="tdvalues">Holder</td>
+					    <td id="yr3gpmargin" class="tdvalues">Holder</td>
+					    <td id="yr4gpmargin" class="tdvalues">Holder</td>
+					    <td id="yr5gpmargin" class="tdvalues">Holder</td>
+					  </tr>
 		
 					  <tr>
-					  	<td>Expenses</td>
+					  	<td>(-) Expenses</td>
 					  	<td id="yr1exp" class="tdvalues">Holder</td> 
 					    <td id="yr2exp" class="tdvalues">Holder</td>
 					    <td id="yr3exp" class="tdvalues">Holder</td>
@@ -1028,7 +1009,7 @@ footer {
 					    <td id="yr5exp" class="tdvalues">Holder</td>
 					  </tr>
 		
-					  <tr>
+					  <tr class="trsum">
 					  	<td>Profit (EBITDA)</td>
 					  	<td id="yr1op" class="tdvalues">Holder</td> 
 					    <td id="yr2op" class="tdvalues">Holder</td>
@@ -1036,9 +1017,18 @@ footer {
 					    <td id="yr4op" class="tdvalues">Holder</td>
 					    <td id="yr5op" class="tdvalues">Holder</td>
 					  </tr>
+
+					  <tr class="trpercent">
+					  	<td>Profit margin</td>
+					  	<td id="yr1opmargin" class="tdvalues">Holder</td> 
+					    <td id="yr2opmargin" class="tdvalues">Holder</td>
+					    <td id="yr3opmargin" class="tdvalues">Holder</td>
+					    <td id="yr4opmargin" class="tdvalues">Holder</td>
+					    <td id="yr5opmargin" class="tdvalues">Holder</td>
+					  </tr>
 		
 					  <tr>
-					    <td>Interest</td>
+					    <td>(-) Interest</td>
 					    <td id="yr1int" class="tdvalues">Holder</td> 
 					    <td id="yr2int" class="tdvalues">Holder</td>
 					    <td id="yr3int" class="tdvalues">Holder</td>
@@ -1056,7 +1046,7 @@ footer {
 					  </tr>
 		
 					  <tr>
-					    <td>Taxes</td>
+					    <td>(-) Taxes</td>
 					    <td id="yr1tax" class="tdvalues">Holder</td> 
 					    <td id="yr2tax" class="tdvalues">Holder</td>
 					    <td id="yr3tax" class="tdvalues">Holder</td>
@@ -1064,7 +1054,7 @@ footer {
 					    <td id="yr5tax" class="tdvalues">Holder</td>
 					  </tr>
 		
-					  <tr>
+					  <tr class="trsum">
 					    <td>Net income</td>
 					    <td id="yr1ni" class="tdvalues">Holder</td> 
 					    <td id="yr2ni" class="tdvalues">Holder</td>
@@ -1104,7 +1094,7 @@ footer {
 					    <td id="yr5capex" class="tdvalues">Holder</td>
 					  </tr>
 					  
-					  <tr>
+					  <tr class="trsum">
 					    <td>Cash flow</td>
 					    <td id="yr1cf" class="tdvalues">Holder</td> 
 					    <td id="yr2cf" class="tdvalues">Holder</td>
@@ -1114,7 +1104,7 @@ footer {
 					  </tr>
 		
 					  <tr>
-					    <td>Unlevered FCF</td>
+					    <td>Unlevered free cash flow (UFCF)</td>
 					    <td id="yr1ulfcf" class="tdvalues">Holder</td> 
 					    <td id="yr2ulfcf" class="tdvalues">Holder</td>
 					    <td id="yr3ulfcf" class="tdvalues">Holder</td>
@@ -1155,7 +1145,7 @@ footer {
 					  </tr>
 		
 					  <tr>
-					    <td>Net debt</td>
+					    <td><a href="#" class="tooltiptarget" data-toggle="tooltip" title="Debt balance - cash balance.  Shows a company's overall debt situation">Net debt</a></td>
 					    <td id="yr1netdebt" class="tdvalues">Holder</td> 
 					    <td id="yr2netdebt" class="tdvalues">Holder</td>
 					    <td id="yr3netdebt" class="tdvalues">Holder</td>
@@ -1196,7 +1186,7 @@ footer {
 					  </tr>
 		
 					  <tr>
-					    <td>Unlevered CF</td>
+					    <td>UFCF</td>
 					    <td id="yr5ulfcfval" class="tdvalues">Holder</td> 
 					    <td id="fcfmulth" class="tdvalues">Holder</td>
 					    <td id="fcfmultl" class="tdvalues">Holder</td>
