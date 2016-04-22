@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  
+
+  <!--Load the AJAX API bootstrap-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript"> 
+	  $(document).ready(function(){$('[data-toggle="tooltip"]').tooltip();});
+	  $(document).ready(function(){$('[data-toggle="popover"]').popover({trigger: "hover"});});
+  </script>
+  
+  <!--Load Google Charts-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+	  
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawRev);
+  google.charts.setOnLoadCallback(drawOp);
+  google.charts.setOnLoadCallback(drawCf);
+  google.charts.setOnLoadCallback(drawBs);
+  google.charts.setOnLoadCallback(drawVal);
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  
+  //Revenue chart
+  function drawRev() {
+
+    // Create the data table 
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Year');
+    data.addColumn('number', 'Revenue');
+    data.addRows([
+      ['Year 1', yr1],
+      ['Year 2', yr2],
+      ['Year 3', yr3],
+      ['Year 4', yr4],
+      ['Year 5', yr5]
+    ]);
+        
+
+    // Set chart options
+	var options = {
+	    width: 600,
+	    height: 400, 
+	    chartArea: {
+		    width: "75%",
+			height: "80%",
+			top: "5%"
+		},	    
+	    colors: ['#40C4FF'],
+		legend: {position: 'none'},
+	    vAxis: {
+		    minValue: 0,
+		    format: '$#,###'
+		},
+		animation: {
+			startup: true,
+			duration: 500,
+			easing: 'out'
+		}
+	};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_rev'));
+    chart.draw(data, options);
+
+  }
+  
+  //Operating profit chart
+  function drawOp() {
+
+    // Create the data table 
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Year');
+    data.addColumn('number', 'Operating profit');
+    data.addRows([
+      ['Year 1', yr1op],
+      ['Year 2', yr2op],
+      ['Year 3', yr3op],
+      ['Year 4', yr4op],
+      ['Year 5', yr5op]
+    ]);
+        
+
+    // Set chart options
+	var options = {
+	    width: 600,
+	    height: 400, 
+	    chartArea: {
+		    width: "75%",
+			height: "80%",
+			top: "5%"
+		},	    
+	    colors: ['#40C4FF'],
+		legend: {position: 'none'},
+	    vAxis: {
+		    minValue: 0,
+		    format: '$#,###'
+		},
+		animation: {
+			startup: true,
+			duration: 500,
+			easing: 'out'
+		}
+	};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_op'));
+    chart.draw(data, options);
+
+  }
+  
+  //Cash flow chart
+  function drawCf() {
+
+    // Create the data table 
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Year');
+    data.addColumn('number', 'Cash flow');
+    data.addRows([
+      ['Year 1', yr1cf],
+      ['Year 2', yr2cf],
+      ['Year 3', yr3cf],
+      ['Year 4', yr4cf],
+      ['Year 5', yr5cf]
+    ]);
+        
+
+    // Set chart options
+	var options = {
+	    width: 600,
+	    height: 400, 
+	    chartArea: {
+		    width: "75%",
+			height: "80%",
+			top: "5%"
+		},	    
+	    colors: ['#40C4FF'],
+		legend: {position: 'none'},
+	    vAxis: {
+		    minValue: 0,
+		    format: '$#,###'
+		},
+		animation: {
+			startup: true,
+			duration: 500,
+			easing: 'out'
+		}
+	};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_cf'));
+    chart.draw(data, options);
+
+  }
+
+  //Balance sheet chart
+  function drawBs() {
+
+    // Create the data table 
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Year');
+    data.addColumn('number', 'Cash balance');
+    data.addRows([
+      ['Year 1', yr1cash],
+      ['Year 2', yr2cash],
+      ['Year 3', yr3cash],
+      ['Year 4', yr4cash],
+      ['Year 5', yr5cash]
+    ]);
+        
+
+    // Set chart options
+	var options = {
+	    width: 600,
+	    height: 400, 
+	    chartArea: {
+		    width: "75%",
+			height: "80%",
+			top: "5%"
+		},	    
+	    colors: ['#40C4FF'],
+		legend: {position: 'none'},
+	    vAxis: {
+		    minValue: 0,
+		    format: '$#,###'
+		},
+		animation: {
+			startup: true,
+			duration: 500,
+			easing: 'out'
+		}
+	};
+
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_bs'));
+    chart.draw(data, options);
+
+  }
+   
+  //Valuation chart
+  function drawVal() {
+
+    // Create the data table 
+    var data = google.visualization.arrayToDataTable([
+      ['Revenue', revvall, revvall, revvalh, revvalh],
+      ['EBITDA', opvall, opvall, opvalh, opvalh],
+      ['Cashflow', fcfvall, fcfvall, fcfvalh, fcfvalh],
+      ], true);
+        
+
+    // Set chart options
+	var options = {
+	    width: 600,
+	    height: 400, 
+	    chartArea: {
+		    width: "75%",
+			height: "80%",
+			top: "5%"
+		},	    
+	    colors: ['#40C4FF'],
+		legend: {position: 'none'},
+	    vAxis: {
+		    format: '$#,###'
+		},
+		animation: {
+			startup: true,
+			duration: 500,
+			easing: 'out'
+		}
+	};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.CandlestickChart(document.getElementById('chart_val'));
+    chart.draw(data, options);
+
+  }
+
+  </script>
+
+  <!--Calculations-->
+  <script type="text/javascript">
+			
+	var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,yr0,yr1,yr2,yr3,yr4,yr5,yr0exp,yr1exp,yr2exp,yr3exp,yr4exp,yr5exp,yr1op,yr2op,yr3op,yr4op,yr5op,revmulth,revmultl,opmulth,opmultl,fcfmulth,fcfmultl,revvalh,revvall,opvalh,opvall,fcfvalh,fcfvall,yr1show,yr2show,yr3show,yr4show,yr5show,cogsRt,capRt1,capRt2,capRt3,capRt4,capRt5,taxRt1,taxRt2,taxRt3,taxRt4,taxRt5,begCash,begDebt,intrt,yr1cogs,yr2cogs,yr3cogs,yr4cogs,yr5cogs,yr1gp,yr2gp,yr3gp,yr4gp,yr5gp,yr1int,yr2int,yr3int,yr4int,yr5int,yr1tax,yr2tax,yr3tax,yr4tax,yr5tax,yr1pti,yr2pti,yr3pti,yr4pti,yr5pti,yr1ni,yr2ni,yr3ni,yr4ni,yr5ni,yr1capex,yr2capex,yr3capex,yr4capex,yr5capex,yr1cash,yr2cash,yr3cash,yr4cash,yr5cash,yr1debt,yr2debt,yr3debt,yr4debt,yr5debt,yr1cf,yr2cf,yr3cf,yr4cf,yr5cf,yr1ulfcf,yr2ulfcf,yr3ulfcf,yr4ulfcf,yr5ulfcf,yr1netdebt,yr2netdebt,yr3netdebt,yr4netdebt,yr5netdebt;
+	
+	function setValues()
+	{
+		//revenue
+		a = parseFloat(document.getElementById("a").value);
+		b = parseFloat(document.getElementById("b").value)/100;
+		c = parseFloat(document.getElementById("c").value)/100;
+		d = parseFloat(document.getElementById("d").value)/100;
+		e = parseFloat(document.getElementById("e").value)/100;
+		f = parseFloat(document.getElementById("f").value)/100;
+
+		//cogs
+		cogsRt = parseFloat(document.getElementById("cogs").value)/100;
+
+		//expenses
+		g = parseFloat(document.getElementById("g").value);
+		h = parseFloat(document.getElementById("h").value)/100;
+		i = parseFloat(document.getElementById("i").value)/100;
+		j = parseFloat(document.getElementById("j").value)/100;
+		k = parseFloat(document.getElementById("k").value)/100;
+		l = parseFloat(document.getElementById("l").value)/100;
+
+		//capex % revenue
+		capRt1 = parseFloat(document.getElementById("caprt1").value)/100;
+		capRt2 = parseFloat(document.getElementById("caprt2").value)/100;
+		capRt3 = parseFloat(document.getElementById("caprt3").value)/100;
+		capRt4 = parseFloat(document.getElementById("caprt4").value)/100;
+		capRt5 = parseFloat(document.getElementById("caprt5").value)/100;
+
+		//tax rate
+		taxRt1 = parseFloat(document.getElementById("taxrt1").value)/100;
+		taxRt2 = parseFloat(document.getElementById("taxrt2").value)/100;
+		taxRt3 = parseFloat(document.getElementById("taxrt3").value)/100;
+		taxRt4 = parseFloat(document.getElementById("taxrt4").value)/100;
+		taxRt5 = parseFloat(document.getElementById("taxrt5").value)/100;
+
+		//balance sheet
+		begCash = parseFloat(document.getElementById("begcash").value);
+		begDebt = parseFloat(document.getElementById("begdebt").value);
+		intRt = parseFloat(document.getElementById("intrt").value)/100;
+
+		//multiples
+		m = parseFloat(document.getElementById("mh").value);
+		n = parseFloat(document.getElementById("ml").value);
+		o = parseFloat(document.getElementById("nh").value);
+		p = parseFloat(document.getElementById("nl").value);
+		q = parseFloat(document.getElementById("oh").value);
+		r = parseFloat(document.getElementById("ol").value);
+			
+	}
+	
+	function update()
+	{
+		setValues();
+		//revenue
+		yr0 = a;
+		yr1 = yr0 * (1+b);
+		yr2 = yr1 * (1+c);
+		yr3 = yr2 * (1+d);
+		yr4 = yr3 * (1+e);
+		yr5 = yr4 * (1+f);
+		document.getElementById("yr1rev").innerHTML=yr1.toFixed(1);
+		document.getElementById("yr2rev").innerHTML=yr2.toFixed(1);
+		document.getElementById("yr3rev").innerHTML=yr3.toFixed(1);
+		document.getElementById("yr4rev").innerHTML=yr4.toFixed(1);
+		document.getElementById("yr5rev").innerHTML=yr5.toFixed(1);
+		document.getElementById("yr5revval").innerHTML=yr5.toFixed(1);
+
+		//cogs
+		yr1cogs = yr1 * cogsRt;
+		yr2cogs = yr2 * cogsRt;
+		yr3cogs = yr3 * cogsRt;
+		yr4cogs = yr4 * cogsRt;
+		yr5cogs = yr5 * cogsRt;
+		document.getElementById("yr1cogs").innerHTML=yr1cogs.toFixed(1);
+		document.getElementById("yr2cogs").innerHTML=yr2cogs.toFixed(1);
+		document.getElementById("yr3cogs").innerHTML=yr3cogs.toFixed(1);
+		document.getElementById("yr4cogs").innerHTML=yr4cogs.toFixed(1);
+		document.getElementById("yr5cogs").innerHTML=yr5cogs.toFixed(1);
+
+	
+		//gross profit
+		yr1gp = yr1 - yr1cogs;
+		yr2gp = yr2 - yr2cogs;
+		yr3gp = yr3 - yr3cogs;
+		yr4gp = yr4 - yr4cogs;
+		yr5gp = yr5 - yr5cogs;
+		document.getElementById("yr1gp").innerHTML=yr1gp.toFixed(1);
+		document.getElementById("yr2gp").innerHTML=yr2gp.toFixed(1);
+		document.getElementById("yr3gp").innerHTML=yr3gp.toFixed(1);
+		document.getElementById("yr4gp").innerHTML=yr4gp.toFixed(1);
+		document.getElementById("yr5gp").innerHTML=yr5gp.toFixed(1);
+
+		//expenses
+		yr0exp = g;
+		yr1exp = yr0exp * (1+h);
+		yr2exp = yr1exp * (1+i);
+		yr3exp = yr2exp * (1+j);
+		yr4exp = yr3exp * (1+k);
+		yr5exp = yr4exp * (1+l);
+		document.getElementById("yr1exp").innerHTML=yr1exp.toFixed(1);
+		document.getElementById("yr2exp").innerHTML=yr2exp.toFixed(1);
+		document.getElementById("yr3exp").innerHTML=yr3exp.toFixed(1);
+		document.getElementById("yr4exp").innerHTML=yr4exp.toFixed(1);
+		document.getElementById("yr5exp").innerHTML=yr5exp.toFixed(1);
+
+		//operating profit (EBITDA)
+		yr1op = yr1gp - yr1exp;
+		yr2op = yr2gp - yr2exp;
+		yr3op = yr3gp - yr3exp;
+		yr4op = yr4gp - yr4exp;
+		yr5op = yr5gp - yr5exp;
+		document.getElementById("yr1op").innerHTML=yr1op.toFixed(1);
+		document.getElementById("yr2op").innerHTML=yr2op.toFixed(1);
+		document.getElementById("yr3op").innerHTML=yr3op.toFixed(1);
+		document.getElementById("yr4op").innerHTML=yr4op.toFixed(1);
+		document.getElementById("yr5op").innerHTML=yr5op.toFixed(1);
+		document.getElementById("yr5opval").innerHTML=yr5op.toFixed(1);
+		
+		//interest
+		yr1int = 0;
+		yr2int = 0;
+		yr3int = 0;
+		yr4int = 0;
+		yr5int = 0;
+		document.getElementById("yr1int").innerHTML=yr1int.toFixed(1);
+		document.getElementById("yr2int").innerHTML=yr2int.toFixed(1);
+		document.getElementById("yr3int").innerHTML=yr3int.toFixed(1);
+		document.getElementById("yr4int").innerHTML=yr4int.toFixed(1);
+		document.getElementById("yr5int").innerHTML=yr5int.toFixed(1);
+
+		//pre-tax income
+		yr1pti = yr1op - yr1int;
+		yr2pti = yr2op - yr2int;
+		yr3pti = yr3op - yr3int;
+		yr4pti = yr4op - yr4int;
+		yr5pti = yr5op - yr5int;
+		document.getElementById("yr1pti").innerHTML=yr1pti.toFixed(1);
+		document.getElementById("yr2pti").innerHTML=yr2pti.toFixed(1);
+		document.getElementById("yr3pti").innerHTML=yr3pti.toFixed(1);
+		document.getElementById("yr4pti").innerHTML=yr4pti.toFixed(1);
+		document.getElementById("yr5pti").innerHTML=yr5pti.toFixed(1);
+
+		//taxes
+		yr1tax = yr1pti * taxRt1;
+		yr2tax = yr2pti * taxRt2;
+		yr3tax = yr3pti * taxRt3;
+		yr4tax = yr4pti * taxRt4;
+		yr5tax = yr5pti * taxRt5;
+		document.getElementById("yr1tax").innerHTML=yr1tax.toFixed(1);
+		document.getElementById("yr2tax").innerHTML=yr2tax.toFixed(1);
+		document.getElementById("yr3tax").innerHTML=yr3tax.toFixed(1);
+		document.getElementById("yr4tax").innerHTML=yr4tax.toFixed(1);
+		document.getElementById("yr5tax").innerHTML=yr5tax.toFixed(1);
+
+		//net income
+		yr1ni = yr1pti - yr1tax;
+		yr2ni = yr2pti - yr2tax;
+		yr3ni = yr3pti - yr3tax;
+		yr4ni = yr4pti - yr4tax;
+		yr5ni = yr5pti - yr5tax;
+		document.getElementById("yr1ni").innerHTML=yr1ni.toFixed(1);
+		document.getElementById("yr2ni").innerHTML=yr2ni.toFixed(1);
+		document.getElementById("yr3ni").innerHTML=yr3ni.toFixed(1);
+		document.getElementById("yr4ni").innerHTML=yr4ni.toFixed(1);
+		document.getElementById("yr5ni").innerHTML=yr5ni.toFixed(1);
+		document.getElementById("yr1ni2").innerHTML=yr1ni.toFixed(1);
+		document.getElementById("yr2ni2").innerHTML=yr2ni.toFixed(1);
+		document.getElementById("yr3ni2").innerHTML=yr3ni.toFixed(1);
+		document.getElementById("yr4ni2").innerHTML=yr4ni.toFixed(1);
+		document.getElementById("yr5ni2").innerHTML=yr5ni.toFixed(1);
+
+		//capex
+		yr1capex = yr1 * capRt1;
+		yr2capex = yr2 * capRt2;
+		yr3capex = yr3 * capRt3;
+		yr4capex = yr4 * capRt4;
+		yr5capex = yr5 * capRt5;
+		document.getElementById("yr1capex").innerHTML=yr1capex.toFixed(1);
+		document.getElementById("yr2capex").innerHTML=yr2capex.toFixed(1);
+		document.getElementById("yr3capex").innerHTML=yr3capex.toFixed(1);
+		document.getElementById("yr4capex").innerHTML=yr4capex.toFixed(1);
+		document.getElementById("yr5capex").innerHTML=yr5capex.toFixed(1);
+
+		//cash flow
+		yr1cf = yr1ni - yr1capex;
+		yr2cf = yr2ni - yr2capex;
+		yr3cf = yr3ni - yr3capex;
+		yr4cf = yr4ni - yr4capex;
+		yr5cf = yr5ni - yr5capex;
+		document.getElementById("yr1cf").innerHTML=yr1cf.toFixed(1);
+		document.getElementById("yr2cf").innerHTML=yr2cf.toFixed(1);
+		document.getElementById("yr3cf").innerHTML=yr3cf.toFixed(1);
+		document.getElementById("yr4cf").innerHTML=yr4cf.toFixed(1);
+		document.getElementById("yr5cf").innerHTML=yr5cf.toFixed(1);
+
+		//cash balance
+		yr1cash = begCash + yr1cf;
+		yr2cash = yr1cash + yr2cf;
+		yr3cash = yr2cash + yr3cf;
+		yr4cash = yr3cash + yr4cf;
+		yr5cash = yr4cash + yr5cf;
+		document.getElementById("yr1cash").innerHTML=yr1cash.toFixed(1);
+		document.getElementById("yr2cash").innerHTML=yr2cash.toFixed(1);
+		document.getElementById("yr3cash").innerHTML=yr3cash.toFixed(1);
+		document.getElementById("yr4cash").innerHTML=yr4cash.toFixed(1);
+		document.getElementById("yr5cash").innerHTML=yr5cash.toFixed(1);
+
+		//debt balance
+		yr1debt = begDebt + 0;
+		yr2debt = yr1debt + 0;
+		yr3debt = yr2debt + 0;
+		yr4debt = yr3debt + 0;
+		yr5debt = yr4debt + 0;
+		document.getElementById("yr1debt").innerHTML=yr1debt.toFixed(1);
+		document.getElementById("yr2debt").innerHTML=yr2debt.toFixed(1);
+		document.getElementById("yr3debt").innerHTML=yr3debt.toFixed(1);
+		document.getElementById("yr4debt").innerHTML=yr4debt.toFixed(1);
+		document.getElementById("yr5debt").innerHTML=yr5debt.toFixed(1);
+
+		//net debt
+		yr1netdebt = yr1debt - yr1cash;
+		yr2netdebt = yr2debt - yr2cash;
+		yr3netdebt = yr3debt - yr3cash;
+		yr4netdebt = yr4debt - yr4cash;
+		yr5netdebt = yr5debt - yr5cash;
+		document.getElementById("yr1netdebt").innerHTML=yr1netdebt.toFixed(1);
+		document.getElementById("yr2netdebt").innerHTML=yr2netdebt.toFixed(1);
+		document.getElementById("yr3netdebt").innerHTML=yr3netdebt.toFixed(1);
+		document.getElementById("yr4netdebt").innerHTML=yr4netdebt.toFixed(1);
+		document.getElementById("yr5netdebt").innerHTML=yr5netdebt.toFixed(1);
+
+		//ulfcf
+		yr1ulfcf = yr1cf + yr1int;
+		yr2ulfcf = yr2cf + yr2int;
+		yr3ulfcf = yr3cf + yr3int;
+		yr4ulfcf = yr4cf + yr4int;
+		yr5ulfcf = yr5cf + yr5int;
+		document.getElementById("yr1ulfcf").innerHTML=yr1ulfcf.toFixed(1);
+		document.getElementById("yr2ulfcf").innerHTML=yr2ulfcf.toFixed(1);
+		document.getElementById("yr3ulfcf").innerHTML=yr3ulfcf.toFixed(1);
+		document.getElementById("yr4ulfcf").innerHTML=yr4ulfcf.toFixed(1);
+		document.getElementById("yr5ulfcf").innerHTML=yr5ulfcf.toFixed(1);				
+		document.getElementById("yr5ulfcfval").innerHTML=yr5ulfcf.toFixed(1);				
+
+		//multiples
+		revmulth = m;
+		revmultl = n;
+		opmulth = o;				
+		opmultl = p;
+		fcfmulth = q;
+		fcfmultl = r;
+		document.getElementById("revmulth").innerHTML=revmulth.toFixed(1);
+		document.getElementById("revmultl").innerHTML=revmultl.toFixed(1);
+		document.getElementById("opmulth").innerHTML=opmulth.toFixed(1);
+		document.getElementById("opmultl").innerHTML=opmultl.toFixed(1);
+		document.getElementById("fcfmulth").innerHTML=fcfmulth.toFixed(1);
+		document.getElementById("fcfmultl").innerHTML=fcfmultl.toFixed(1);
+
+		//valuation - year 5 (BoY)
+		revvalh = yr5 * revmulth;
+		revvall = yr5 * revmultl;
+		opvalh = yr5op * opmulth;
+		opvall = yr5op * opmultl;
+		fcfvalh = yr5ulfcf * fcfmulth;
+		fcfvall = yr5ulfcf * fcfmultl;
+		document.getElementById("revvalh").innerHTML=revvalh.toFixed(1);
+		document.getElementById("revvall").innerHTML=revvall.toFixed(1);
+		document.getElementById("opvalh").innerHTML=opvalh.toFixed(1);
+		document.getElementById("opvall").innerHTML=opvall.toFixed(1);
+		document.getElementById("fcfvalh").innerHTML=fcfvalh.toFixed(1);
+		document.getElementById("fcfvall").innerHTML=fcfvall.toFixed(1);
+
+	}
+
+	
+</script>
+
+  <style>
+  body {
+      font: 400 15px Roboto, sans-serif;
+      line-height: 1.8;
+      color: rgba(0,  0,  0, 0.54);
+      background-color: #FAFAFA;
+  }
+  
+  a.tooltiptarget {
+  	  text-decoration: none;
+	  border-bottom: 1px dotted;
+	  color: inherit;
+  }
+  
+  input {
+	  border: none;
+	  border-bottom: 1px solid rgba(0,0,0, 0.12);
+	  padding: 0px 10px;
+	  text-align: right;
+	  color: inherit;
+	  max-width: 80px;
+	  float: right;
+	  height: 26px;
+	  }
+  
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  
+  h6 {
+	  color: rgba(0, 0, 0, 0.38);
+  }
+  
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  
+  
+  .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+  }
+  .logo {
+      color: #f4511e;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid rgba(0,0,0, .12); 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  
+  
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #40C4FF;
+      background-color: #fff !important;
+      color: black;
+  }
+  /*.panel-heading {
+      color: #fff !important;
+      background-color: #8BC34A !important;
+      padding: 5px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }*/
+
+  	.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+  		background-color:#689F38;
+  		border-radius: 0;
+	}
+  
+  .btn-default {
+	  border-radius: 0;
+	}
+
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #40C4FF;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #8BC34A;
+      z-index: 9999;
+      border: 0;
+      font-size: 14px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Roboto, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #689F38 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  
+  li.title {
+	  font-weight: 700;
+  }
+
+.tdvalues {
+	text-align: right;
+}
+
+footer {
+	background-color: #8BC34A;
+}
+
+
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  
+   
+  </style>
+</head>
+
+<body>
+<!--<body onload="update(), drawRev(), drawBs(), drawOp(), drawCf(), drawVal()">-->
+
+<!-- Container (navbar) -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/index.html"><img src="images/logo.png" alt="logo" style="width:100px; height:100%"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/index.html">HOME</a></li>
+        <li><a href="/solutions">SOLUTIONS</a></li>
+        <li><a href="/example">EXAMPLE</a></li>
+        <li><a href="/blog">BLOG</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Container (dashboard) -->
+<div id="dashboard" class="container-fluid">
+  <div class="row">
+	
+	<!-- Container (instructions) -->
+	<div class="col-sm-12">
+		<div class="panel panel-default text-left">
+			<div class="panel-heading">About</div>
+			<div class="panel-body">
+				<p>Back-of-the-envelope model to answer important questions.  Pre-populated with values based on typical early stage tech company.  Play with assumptions on right to model your business.  Run scenarios to get sense of outcomes.  Illustrative only.</p>
+			</div>
+		</div>
+	</div>
+		  
+  	<!-- Container (assumptions) -->
+    <div class="col-sm-4 col-sm-push-8">
+      <div class="panel panel-default">
+	    <div class="panel-heading">Assumptions</div>  
+        <div class="panel-heading">
+	        <a data-toggle="collapse" href="#collapse1">Revenue</a>
+        </div>
+		<div class="panel-body panel-collapse collapse in" id="collapse1">
+			<ul class="list-unstyled">
+				<li class="title">Annual revenue</li>
+				<li>
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Current annual revenue. Must be greater than $1.">Starting revenue <small>($000s)</small></a>
+					<input id="a" type="text" value="1534">
+				</li>
+				<li>Yr 1 growth rate<input id="b" class="percent" type="text" value="96%"></li>
+				<li>Yr 2 growth rate<input id="c" type="text" value="72%"></li>
+				<li>Yr 3 growth rate<input id="d" type="text" value="55%"></li>
+				<li>Yr 4 growth rate<input id="e" type="text" value="44%"></li>
+				<li>Yr 5 growth rate<input id="f" type="text" value="34%"></li>
+			</ul>
+		</div>
+		
+		<div class="panel-heading">
+			<a data-toggle="collapse" href="#collapse2">COGS</a>
+		</div>
+		<div class="panel-body panel-collapse collapse" id="collapse2">
+			<ul class="list-unstyled">
+				<li class="title">
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Costs associated with running a customer (hosting fees, CDNs, third party web fees)">
+						Cost of goods sold</a>
+				</li>
+				<li>
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Typically tied directly to number of customers so are estimated as a % of revenue">
+						% revenue</a>
+					<input id="cogs" type="text" value="17%">
+				</li>
+			</ul>
+        </div>
+		
+		<div class="panel-heading">
+			<a data-toggle="collapse" href="#collapse3">Expenses</a>
+		</div>
+		<div class="panel-body panel-collapse collapse" id="collapse3">
+			<ul class="list-unstyled">
+				<li class="title">
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Exclude non-operating expenses (interest, taxes, large equipment purchases)">
+						Annual expenses</a>
+				</li>
+				<li>
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Current annual expenses. Must be greater than $1.">Starting expenses <small>($000s)</small></a>
+					<input id="g" type="text" value="1023">
+				</li>
+				<li>Yr 1 growth<input id="h" type="text" value="78%"></li>
+				<li>Yr 2 growth<input id="i" type="text" value="61%"></li>
+				<li>Yr 3 growth<input id="j" type="text" value="46%"></li>
+				<li>Yr 4 growth<input id="k" type="text" value="39%"></li>
+				<li>Yr 5 growth<input id="l" type="text" value="28%"></li>
+	        </ul>
+        </div>
+		
+		<div class="panel-heading">
+			<a data-toggle="collapse" href="#collapse4">Capital expenditures</a>
+      	</div>
+        <div class="panel-body panel-collapse collapse" id="collapse4">
+			<ul class="list-unstyled">
+				<li class="title">
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Funds used to acquire or upgrade physical assets such as property, buildings or equipment (e.g. computers, servers).">
+						Annual capital expenditures (capex)</a>
+				</li>
+				<li>Yr 1 %rev<input id="caprt1" type="text" value="9%"></li>
+				<li>Yr 2 %rev<input id="caprt2" type="text" value="8%"></li>
+				<li>Yr 3 %rev<input id="caprt3" type="text" value="7%"></li>
+				<li>Yr 4 %rev<input id="caprt4" type="text" value="7%"></li>
+				<li>Yr 5 %rev<input id="caprt5" type="text" value="6%"></li>
+			</ul>
+        </div>
+
+		<div class="panel-heading">
+			<a data-toggle="collapse" href="#collapse5">Tax rate</a>
+      	</div>
+        <div class="panel-body panel-collapse collapse" id="collapse5">
+			<ul class="list-unstyled">
+				<li class="title"><a href="#" class="tooltiptarget" data-toggle="tooltip" title="Percent of pre-tax profit a company pays in cash taxes.">
+					Cash tax rate</a>
+				</li>
+				<li>Year 1<input id="taxrt1" type="text" value="5%"></li>
+				<li>Year 2<input id="taxrt2" type="text" value="9%"></li>
+				<li>Year 3<input id="taxrt3" type="text" value="16%"></li>
+				<li>Year 4<input id="taxrt4" type="text" value="28%"></li>
+				<li>Year 5<input id="taxrt5" type="text" value="35%"></li>
+			</ul>
+        </div>
+
+		<div class="panel-heading">
+  			<a data-toggle="collapse" href="#collapse6">Balances</a>
+		</div>
+        <div class="panel-body panel-collapse collapse" id="collapse6">
+			<ul class="list-unstyled">
+				<li class="title">Beginning balances <h6>($000s)</h6></li>
+				<li>Cash balance<input id="begcash" type="text" value="349"></li>
+				<li>Debt balance<input id="begdebt" type="text" value="0"></li>
+				<li>
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Annual percentage rate for interest on debt">APR</a>
+					<input id="intrt" type="text" value="5.2%">
+				</li>
+			</ul>
+        </div>
+
+
+        <div class="panel-heading">
+			<a data-toggle="collapse" href="#collapse7">Valuation</a>
+        </div>
+		<div class="panel-body panel-collapse collapse" id="collapse7">
+			<ul class="list-unstyled">
+				<li class="title">
+					<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Multiples ranges for comparable companies.">Valuation multiples</a>
+				</li>
+				<li>Revenue-high<input id="mh" type="text" value="10"></li>
+				<li>Revenue-low<input id="ml" type="text" value="10"></li>
+				<li>EBITDA-high<input id="nh" type="text" value="10"></li>
+				<li>EBITDA-low<input id="nl" type="text" value="10"></li>
+				<li>Cash flow-high<input id="oh" type="text" value="10"></li>
+				<li>Cash flow-low<input id="ol" type="text" value="10"></li>
+			</ul>
+        </div>
+        
+        <div class="panel-footer">
+          <button class="btn btn-default" onclick="update(), drawRev(), drawOp(), drawCf(), drawBs(), drawVal()">Update</button>
+        </div>
+      </div>
+    </div>
+
+  	<!-- Container (chart) -->
+    <div class="col-sm-8 col-sm-pull-4">
+      <div class="panel panel-default text-left">
+	    <div class="panel-heading">Charts</div>  
+        <div class="panel-heading">
+			<ul class="nav nav-pills">
+				<li class="active"><a data-toggle="pill" href="#rev-chart">Revenue</a></li>
+			    <li><a data-toggle="pill" href="#op-chart">Profit</a></li>
+			    <li><a data-toggle="pill" href="#cf-chart">Cash flow</a></li>
+			    <li><a data-toggle="pill" href="#bs-chart">Balances</a></li>
+			    <li><a data-toggle="pill" href="#val-chart">Valuation</a></li>
+			</ul>
+        </div>
+        <div class="panel-body">
+	        <div class="tab-content">
+			    <div id="rev-chart" class="tab-pane fade in active">
+			      <h3>Revenue</h3>
+			      <h6>($ in thousands)</h6>
+			      <div id="chart_rev"></div>
+			      <hr>
+			      <p>Money received from normal business operations during a specific period.  Usually including discounts and deductions for returned merchandise. Also commonly 						referred to as "sales", "top line” or “gross income.”  Excludes 
+				      <a href="#" class="tooltiptarget" data-toggle="tooltip" title="Income from activities other than normal business operations such as investment income, foreign exchange gains, rent income.">other income</a>
+				      not related to normal operations.
+			      </p>
+			    </div>
+			    <div id="op-chart" class="tab-pane fade">
+			      <h3>Profit (<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Earnings Before Interest, Taxes, Depreciation, Amortization.  EBITDA = Revenue - Expenses (excluding tax, interest, depreciation and amortization).">EBITDA</a>)</h3>
+			      <h6>($ in thousands)</h6>			      
+			      <div id="chart_op"></div>
+				  	<hr>
+				  	<p>Here we define profit as 
+					  	<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Earnings Before Interest, Taxes, Depreciation, Amortization.  EBITDA = Revenue - Expenses (excluding tax, interest, depreciation and amortization).">EBITDA</a>
+				  	.  It is a common metric to assess a company’s profitability.   It excludes expenses related to financing and accounting decisions so can be used to compare profitability between companies making it popular among investors and lenders.</p>
+			    </div>
+			    <div id="cf-chart" class="tab-pane fade">
+			      <h3>Cash flow</h3>
+			      <h6>($ in thousands)</h6>
+			      <div id="chart_cf"></div>
+			      <hr>
+			      <p>The amount of cash moving into and out of the company in a specific period.  Cash flow forecasting is critical to make sure there is enough cash to pay expenses and debts. And get a sense if the profitability matter – could be profitable but losing money.  <a href="#cf">Learn more>></a>
+			      </p>
+			    </div>
+			    <div id="bs-chart" class="tab-pane fade">
+			      <h3>Cash and debt balances</h3>
+			      <h6>($ in thousands)</h6>
+			      <div id="chart_bs"></div>
+			      <hr>
+			      <p>Forecasting a cash balance is important to insure sufficient cash to pay all expenses and financing obligations in the future.  Debt balances have been included for reference where applicable.  Many recommend having at least 3 months worth of expenses cash on hand at any time.
+			      </p>
+			    </div>
+			    <div id="val-chart" class="tab-pane fade">
+			      <h3>Company value (<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Theoretical takeover price if a company were to be bought.  Commonly viewed as most accurate value of total company.  Different than value of the equity (Equity Value)">Enterprise value</a>)</h3>
+			      <h6>($ in thousands)</h6>
+				  <div id="chart_val"></div>
+				  <hr>
+			      <p>Companies are frequently valued on a comparables (“comps”) approach.  This approach takes similar companies with clear market values (e.g. publicly-listed, recently acquired) and divides their value by a metric (e.g. revenue) to create a ratio (value/revenue).  This metric is averaged across the group then applied to the metric of the target company: metric x multiple = valuation.  We’ve valued your company based on three common ways revenue multiples, <span style="border-bottom: 1px dotted">EBITDA</span>  multiples and <span style="border-bottom: 1px dotted">unlevered FCF</span> multiples.  Its common to make a range. <a href="/faq#collapse3">Learn more>></a>
+			      </p>
+			    </div>
+	        </div>
+        </div>
+      </div>
+    </div>
+    
+	<!-- Container (table) -->
+	<div class="col-sm-12">
+      <div class="panel panel-default">
+	    <div class="panel-heading">Tables</div>  
+	      <div class="panel-heading">
+		      <ul class="nav nav-pills">
+				<li class="active"><a data-toggle="pill" href="#is-table">P&L</a></li>
+			    <li><a data-toggle="pill" href="#cf-table">Cash flow</a></li>
+			    <li><a data-toggle="pill" href="#bs-table">Balance sheet</a></li>
+			    <li><a data-toggle="pill" href="#val-matrix">Valuation matrix</a></li>
+			</ul>
+	      </div>
+	      
+	      <div class="panel-body">
+		  	<div class="tab-content">
+			    <div id="is-table" class="tab-pane fade in active">
+				    <h6>($ in thousands)</h6>    
+				  	<table class="table table-striped table-hover" id="forecast">
+					  <tr>
+					    <th>Line item</th>
+					    <th class="tdvalues">Year 1</th> 
+					    <th class="tdvalues">Year 2</th>
+					    <th class="tdvalues">Year 3</th> 
+					    <th class="tdvalues">Year 4</th> 
+					    <th class="tdvalues">Year 5</th> 
+					  </tr>
+			
+					  <tr>
+					    <td>Revenue</td>
+					    <td id="yr1rev" class="tdvalues">Holder</td> 
+					    <td id="yr2rev" class="tdvalues">Holder</td>
+					    <td id="yr3rev" class="tdvalues">Holder</td>
+					    <td id="yr4rev" class="tdvalues">Holder</td>
+					    <td id="yr5rev" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>COGS</td>
+					    <td id="yr1cogs" class="tdvalues">Holder</td> 
+					    <td id="yr2cogs" class="tdvalues">Holder</td>
+					    <td id="yr3cogs" class="tdvalues">Holder</td>
+					    <td id="yr4cogs" class="tdvalues">Holder</td>
+					    <td id="yr5cogs" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Gross profit</td>
+					    <td id="yr1gp" class="tdvalues">Holder</td> 
+					    <td id="yr2gp" class="tdvalues">Holder</td>
+					    <td id="yr3gp" class="tdvalues">Holder</td>
+					    <td id="yr4gp" class="tdvalues">Holder</td>
+					    <td id="yr5gp" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					  	<td>Expenses</td>
+					  	<td id="yr1exp" class="tdvalues">Holder</td> 
+					    <td id="yr2exp" class="tdvalues">Holder</td>
+					    <td id="yr3exp" class="tdvalues">Holder</td>
+					    <td id="yr4exp" class="tdvalues">Holder</td>
+					    <td id="yr5exp" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					  	<td>Profit (EBITDA)</td>
+					  	<td id="yr1op" class="tdvalues">Holder</td> 
+					    <td id="yr2op" class="tdvalues">Holder</td>
+					    <td id="yr3op" class="tdvalues">Holder</td>
+					    <td id="yr4op" class="tdvalues">Holder</td>
+					    <td id="yr5op" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Interest</td>
+					    <td id="yr1int" class="tdvalues">Holder</td> 
+					    <td id="yr2int" class="tdvalues">Holder</td>
+					    <td id="yr3int" class="tdvalues">Holder</td>
+					    <td id="yr4int" class="tdvalues">Holder</td>
+					    <td id="yr5int" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Pre-tax income</td>
+					    <td id="yr1pti" class="tdvalues">Holder</td> 
+					    <td id="yr2pti" class="tdvalues">Holder</td>
+					    <td id="yr3pti" class="tdvalues">Holder</td>
+					    <td id="yr4pti" class="tdvalues">Holder</td>
+					    <td id="yr5pti" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Taxes</td>
+					    <td id="yr1tax" class="tdvalues">Holder</td> 
+					    <td id="yr2tax" class="tdvalues">Holder</td>
+					    <td id="yr3tax" class="tdvalues">Holder</td>
+					    <td id="yr4tax" class="tdvalues">Holder</td>
+					    <td id="yr5tax" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Net income</td>
+					    <td id="yr1ni" class="tdvalues">Holder</td> 
+					    <td id="yr2ni" class="tdvalues">Holder</td>
+					    <td id="yr3ni" class="tdvalues">Holder</td>
+					    <td id="yr4ni" class="tdvalues">Holder</td>
+					    <td id="yr5ni" class="tdvalues">Holder</td>
+					  </tr>
+		
+					</table>
+			    </div>
+			    
+			    <div id="cf-table" class="tab-pane fade">
+				    <h6>($ in thousands)</h6>
+				  	<table class="table table-striped table-hover" id="forecast">
+					  <tr>
+					    <th>Line item</th>
+					    <th class="tdvalues">Year 1</th> 
+					    <th class="tdvalues">Year 2</th>
+					    <th class="tdvalues">Year 3</th> 
+					    <th class="tdvalues">Year 4</th> 
+					    <th class="tdvalues">Year 5</th> 
+					  </tr>
+					  <tr>
+					    <td>Net income</td>
+					    <td id="yr1ni2" class="tdvalues">Holder</td> 
+					    <td id="yr2ni2" class="tdvalues">Holder</td>
+					    <td id="yr3ni2" class="tdvalues">Holder</td>
+					    <td id="yr4ni2" class="tdvalues">Holder</td>
+					    <td id="yr5ni2" class="tdvalues">Holder</td>
+					  </tr>			
+					  <tr>
+					    <td>Capital expenditures</td>
+					    <td id="yr1capex" class="tdvalues">Holder</td> 
+					    <td id="yr2capex" class="tdvalues">Holder</td>
+					    <td id="yr3capex" class="tdvalues">Holder</td>
+					    <td id="yr4capex" class="tdvalues">Holder</td>
+					    <td id="yr5capex" class="tdvalues">Holder</td>
+					  </tr>
+					  
+					  <tr>
+					    <td>Cash flow</td>
+					    <td id="yr1cf" class="tdvalues">Holder</td> 
+					    <td id="yr2cf" class="tdvalues">Holder</td>
+					    <td id="yr3cf" class="tdvalues">Holder</td>
+					    <td id="yr4cf" class="tdvalues">Holder</td>
+					    <td id="yr5cf" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Unlevered FCF</td>
+					    <td id="yr1ulfcf" class="tdvalues">Holder</td> 
+					    <td id="yr2ulfcf" class="tdvalues">Holder</td>
+					    <td id="yr3ulfcf" class="tdvalues">Holder</td>
+					    <td id="yr4ulfcf" class="tdvalues">Holder</td>
+					    <td id="yr5ulfcf" class="tdvalues">Holder</td>
+					  </tr>							  
+				  	</table>				  
+			    </div>
+			    
+			    <div id="bs-table" class="tab-pane fade">
+				    <h6>($ in thousands)</h6>
+				  	<table class="table table-striped table-hover" id="forecast">
+					  <tr>
+					    <th>Account</th>
+					    <th class="tdvalues">Year 1</th> 
+					    <th class="tdvalues">Year 2</th>
+					    <th class="tdvalues">Year 3</th> 
+					    <th class="tdvalues">Year 4</th> 
+					    <th class="tdvalues">Year 5</th> 
+					  </tr>
+					  
+					  <tr>
+					    <td>Cash balance</td>
+					    <td id="yr1cash" class="tdvalues">Holder</td> 
+					    <td id="yr2cash" class="tdvalues">Holder</td>
+					    <td id="yr3cash" class="tdvalues">Holder</td>
+					    <td id="yr4cash" class="tdvalues">Holder</td>
+					    <td id="yr5cash" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Debt balance</td>
+					    <td id="yr1debt" class="tdvalues">Holder</td> 
+					    <td id="yr2debt" class="tdvalues">Holder</td>
+					    <td id="yr3debt" class="tdvalues">Holder</td>
+					    <td id="yr4debt" class="tdvalues">Holder</td>
+					    <td id="yr5debt" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Net debt</td>
+					    <td id="yr1netdebt" class="tdvalues">Holder</td> 
+					    <td id="yr2netdebt" class="tdvalues">Holder</td>
+					    <td id="yr3netdebt" class="tdvalues">Holder</td>
+					    <td id="yr4netdebt" class="tdvalues">Holder</td>
+					    <td id="yr5netdebt" class="tdvalues">Holder</td>
+					  </tr>					  
+				  	</table>			 
+			    </div>
+			    
+			    <div id="val-matrix" class="tab-pane fade">    			        			        
+				    <h6>($ in thousands)</h6>
+					<table class="table table-striped table-hover" id="valmatrix">
+					  <tr>
+					    <th>Method</th>
+					    <th class="tdvalues">Metric</th> 
+					    <th class="tdvalues">Multiple - High</th>
+					    <th class="tdvalues">Multiple - Low</th> 
+					    <th class="tdvalues">TEV - High</th> 
+					    <th class="tdvalues">TEV - Low</th> 
+					  </tr>
+			
+					  <tr>
+					    <td>Revenue</td>
+					    <td id="yr5revval" class="tdvalues">Holder</td> 
+					    <td id="revmulth" class="tdvalues">Holder</td>
+					    <td id="revmultl" class="tdvalues">Holder</td>
+					    <td id="revvalh" class="tdvalues">Holder</td>
+					    <td id="revvall" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>EBITDA</td>
+					    <td id="yr5opval" class="tdvalues">Holder</td> 
+					    <td id="opmulth" class="tdvalues">Holder</td>
+					    <td id="opmultl" class="tdvalues">Holder</td>
+					    <td id="opvalh" class="tdvalues">Holder</td>
+					    <td id="opvall" class="tdvalues">Holder</td>
+					  </tr>
+		
+					  <tr>
+					    <td>Unlevered CF</td>
+					    <td id="yr5ulfcfval" class="tdvalues">Holder</td> 
+					    <td id="fcfmulth" class="tdvalues">Holder</td>
+					    <td id="fcfmultl" class="tdvalues">Holder</td>
+					    <td id="fcfvalh" class="tdvalues">Holder</td>
+					    <td id="fcfvall" class="tdvalues">Holder</td>
+					  </tr>
+					</table>
+			    </div>
+		  	</div>
+	      </div>
+      </div>
+	</div>
+  </div>
+</div>
+
+<!-- Container (footer) -->
+<footer class="container-fluid text-center">
+  <p>SumSavy 2016</p>		
+</footer>
+
+</body>
+</html>
