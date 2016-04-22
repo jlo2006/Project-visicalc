@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SumSavy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  
+
+  <!--Load the AJAX API bootstrap-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <style>
+  body {
+      font: 400 15px Roboto, sans-serif;
+      line-height: 1.8;
+      color: rgba(0,  0,  0, 0.54);
+  }
+  
+  
+  a.tooltiptarget {
+  	  text-decoration: none;
+	  border-bottom: 1px dotted;
+	  color: inherit;
+  }
+  
+  input {
+	  border: none;
+	  border-bottom: 1px solid rgba(0,0,0, 0.12);
+	  padding: 0px 10px;
+	  text-align: right;
+	  color: inherit;
+	  max-width: 80px;
+	  float: right;
+	  height: 26px;
+	  }
+    
+  h4 {
+	  font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }
+  
+  h6 {
+	  color: rgba(0, 0, 0, 0.38);
+  }
+  
+  .jumbotron {
+	  background-color: #689F38;
+	  color: #fff;
+	  padding: 100px 25px;
+  }
+  
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #F5F5F5;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  
+  .panel {
+      border: 1px solid rgba(0,0,0, .12); 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  
+  
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #40C4FF;
+      background-color: #fff !important;
+      color: black;
+  }
+
+  .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+  		background-color:#689F38;
+  		border-radius: 0;
+	}
+  
+  .btn-default {
+	  border-radius: 0;
+  }
+  
+  .btn-cta {
+    background-color: #40C4FF;
+    color: white; 
+    border: none;
+  }
+
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #40C4FF;
+      color: #fff;
+  }
+  
+  .navbar {
+      margin-bottom: 0;
+      background-color: #8BC34A;
+      z-index: 9999;
+      border: 0;
+      font-size: 14px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 2px;
+      border-radius: 0;
+      font-family: Roboto, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #689F38 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  
+  .navbar-brand {
+	  padding: 10px;
+  }
+  
+  li.title {
+	  font-weight: 700;
+  }
+
+.tdvalues {
+	text-align: right;
+}
+
+.trsum {
+	border-top: 2px solid rgba(0,0,0, .12);
+}
+
+.trpercent {
+	font-style: italic;
+	font-size: 80%;
+	line-height: 80%;
+	
+}
+
+.prefooter {
+	background-color:#689F38;
+    text-align: left;
+    color:white;
+    font-size: 30px;
+    padding: 10px 20px;
+}
+
+footer {
+	background-color: #8BC34A;
+}
+
+.email {
+	color: #fff;
+}
+
+
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  
+   
+  </style>
+</head>
+
+<body>
+
+<!-- Container (navbar) -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+	  </button>                        
+      <a class="navbar-brand" href="/index.html"><img src="images/logo.png" alt="logo" style="width:100px; height:100%"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/example">TRY IT</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Container (jumbotron) -->
+<div class="jumbotron text-center">
+	<h1>Planning sucks</h1>
+	<p>Let's fix it</p>
+	<a href="/example" class="btn btn-default btn-lg btn-cta" role="button">Try it now!</a>
+</div>
+
+<!-- Container (simple) -->
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-sm-8">
+	      <h2>Simple</h2>
+	      <p>Don't know where to start? No problem. Answer some questions and we build the model for you. No finance knowledge necessary.</p>
+	    </div>
+	    <div class="col-sm-4">
+	      <img src="images/Simple.png" alt="simpleicon" style="width:250px; height:100%">
+	    </div>
+	</div>
+</div>
+
+<!-- Container (clear) -->
+<div class="container-fluid bg-grey">
+	<div class="row">
+	    <div class="col-sm-4 text-right">
+	      <img src="images/Clear.png" alt="clearicon" style="width:250px; height:100%">
+	    </div>
+	    <div class="col-sm-8">
+	      <h2>Clear</h2>
+	      <p>A picture is worth a thousand numbers, but most financial charts are confusing. We create charts you can actually understand.</p>
+	    </div>
+	</div>
+</div>
+
+<!-- Container (collaborative) -->
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-sm-8">
+	      <h2>Collaborative</h2>
+	      <p>Planning isn't done alone, but sending spreadsheets around is inefficient. We streamline sharing to reduce errors and iterations.</p>
+	    </div>
+	    <div class="col-sm-4">
+	      <img src="images/Collaboration.png" alt="collaborateicon" style="width:250px; height:100%">
+	    </div>
+	</div>
+</div>
+
+<!-- Container (fast) -->
+<div class="container-fluid bg-grey">
+	<div class="row">
+	    <div class="col-sm-4 text-right">
+	      <img src="images/Fast.png" alt="fasticon" style="width:200px; height:100%">
+	    </div>
+	    <div class="col-sm-8">
+	      <h2>Fast</h2>
+	      <p>Things change rapidly and keeping up is exhausting. We help you plan for whatever lies ahead with nimble models that are quick and easy to update.</p>
+	    </div>
+	</div>
+</div>
+
+<!-- Container (pre-footer) -->
+<div class="container-fluid prefooter">
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="prefooter">Better planning ahead</div>
+		</div>
+		<div class="col-sm-2">
+			<a href="/example" class="btn btn-default btn-lg btn-cta right" role="button">Try it now!</a>
+		</div>
+	</div>
+</div>
+
+<!-- Container (footer) -->
+<footer class="container-fluid">
+  <p>Questions?  We'd love to help: <a href="mailto: info@sumsavy.com" class="email">info@sumsavy.com</a> or <a href="/contact" class="email">Contact us</a>
+  <br>
+  &copy SumSavy 2016</p>		
+</footer>
+</body>
+</html>
