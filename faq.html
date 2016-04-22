@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  
+
+  <!--Load the AJAX API bootstrap-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <style>
+  body {
+      font: 400 15px Roboto, sans-serif;
+      line-height: 1.8;
+      color: rgba(0,  0,  0, 0.54);
+      background-color: #FAFAFA;
+  }
+  
+  a.tooltiptarget {
+  	  text-decoration: none;
+	  border-bottom: 1px dotted;
+	  color: inherit;
+  }
+  
+  input {
+	  border: none;
+	  border-bottom: 1px solid rgba(0,0,0, 0.12);
+	  padding: 0px 10px;
+	  text-align: right;
+	  color: inherit;
+	  max-width: 80px;
+	  float: right;
+	  height: 26px;
+	  }
+    
+  h4 {
+	  font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }
+  
+  h6 {
+	  color: rgba(0, 0, 0, 0.38);
+  }
+  
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-white {
+      background-color: #fff;
+  }
+  
+  .panel {
+      border: 1px solid rgba(0,0,0, .12); 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  
+  
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #40C4FF;
+      background-color: #fff !important;
+      color: black;
+  }
+
+  .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+  		background-color:#689F38;
+  		border-radius: 0;
+	}
+  
+  .btn-default {
+	  border-radius: 0;
+	}
+
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #40C4FF;
+      color: #fff;
+  }
+  
+  .navbar {
+      margin-bottom: 0;
+      background-color: #8BC34A;
+      z-index: 9999;
+      border: 0;
+      font-size: 14px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 2px;
+      border-radius: 0;
+      font-family: Roboto, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #689F38 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  
+  .navbar-brand {
+	  padding: 10px;
+  }
+  
+  li.title {
+	  font-weight: 700;
+  }
+
+.tdvalues {
+	text-align: right;
+}
+
+.trsum {
+	border-top: 2px solid rgba(0,0,0, .12);
+}
+
+.trpercent {
+	font-style: italic;
+	font-size: 80%;
+	line-height: 80%;
+	
+}
+
+footer {
+	background-color: #8BC34A;
+}
+
+.email {
+	color: #fff;
+}
+
+
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  
+   
+  </style>
+</head>
+
+<body>
+
+<!-- Container (navbar) -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+	  </button>                        
+      <a class="navbar-brand" href="/index.html"><img src="images/logo.png" alt="logo" style="width:100px; height:100%"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/example">TRY IT</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Container (FAQ) -->
+<div id="FAQ" class="container-fluid">
+	<br>
+	<h1>Frequently asked questions (FAQs)</h1>
+	<br>
+
+    <div class="panel panel-default">
+	  <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#whyforecast">Why should I forecast?</a>
+        </h4>
+      </div>
+      <div id="whyforecast" class="panel-collapse collapse">
+        <div class="panel-body">Insert forecast explanation
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#EBITDA">What is EBITDA and why is it used?</a>
+        </h4>
+      </div>
+      <div id="EBITDA" class="panel-collapse collapse">
+        <div class="panel-body">EBITDA - Earnings Before Interest, Taxes, Depreciation, Amortization.  EBITDA = Revenue - Expenses (excluding tax, interest, depreciation and amortization).  EBITDA can be used to analyze and compare profitability between companies and industries because it eliminates the effects of financing and accounting decisions.  It is a non-GAAP metric that allows a greater amount of discretion as to what is (and is not) included in the calculation. Companies can change the items included in their EBITDA calculation.  EBITDA is not the same as cash flow.
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+	  <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#cashflow">What is cash flow and why does it matter?</a>
+        </h4>
+      </div>
+      <div id="cashflow" class="panel-collapse collapse">
+        <div class="panel-body">Cash flow statement helps reconcile the change in cash for a specific period with its income.  It is divided into three sections: operating cash flow = cash flows from normal operations.  Similar to net income but adjusts for accruals (if books are kept that way).  Investing cash flow – purchase or sale of capital assets (capex) which company uses to make money and operate and financing cash flows related to investors and lenders (dividends, equity raise, debt drawdown/repayment).
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+	  <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#treasury">What are some best practices for cash management?</a>
+        </h4>
+      </div>
+      <div id="treasury" class="panel-collapse collapse">
+        <div class="panel-body">Insert cash management text
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+	  <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#valuation">How are companies valued?</a>
+        </h4>
+      </div>
+      <div id="valuation" class="panel-collapse collapse">
+        <div class="panel-body">Comparables approach, DCF, et al
+        </div>
+      </div>
+    </div>
+    
+        
+<!-- Placeholder more questions -->
+</div>
+
+<!-- Container (footer) -->
+<footer class="container-fluid">
+  <p>Questions?  We'd love to help: <a href="mailto: info@sumsavy.com" class="email">info@sumsavy.com</a> or <a href="/contact" class="email">Contact us</a>
+  <br>
+  &copy SumSavy 2016</p>		
+</footer>
+</body>
+</html>
