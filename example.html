@@ -764,7 +764,7 @@ footer {
 		<div class="panel panel-default text-left">
 			<div class="panel-heading">Overview</div>
 			<div class="panel-body">
-				<p><b>Build your financial forecast:</b> Enter your <u>Assumptions</u> below and see the impact real-time. <small><a href="#">Why forecast?</a></small></p>
+				<p><b>Build your financial forecast:</b> Enter your <u>Assumptions</u> below and see a simple forecast in real-time. <small><a href="#">Why forecast?</a></small></p>
 				<p><b>See your valuation:</b> The <u>Valuation</u> tab illustrates what your company could we worth in a few years. <small><a href="#">Understanding valuation</a></small></p>			
 				<p>We've started with real numbers from a growing SaaS company as an example.</p>
 			</div>
@@ -923,9 +923,7 @@ footer {
 			      <h6>($ in thousands)</h6>
 			      <div id="chart_rev"></div>
 			      <hr>
-			      <p>Money received from normal business operations during a specific period.  Usually including discounts and deductions for returned merchandise. Also commonly 						referred to as "sales", "top line” or “gross income.”  Excludes 
-				      <a href="#" class="tooltiptarget" data-toggle="tooltip" title="Income from activities other than normal business operations such as investment income, foreign exchange gains, rent income.">other income</a>
-				      not related to normal operations.
+			      <p><b>ProTip:</b> Revenue can be unpredictable.  Try three scenarios - best guess (base case), things go great (upside case), things go terrible (downside case) - to understand, and plan for, a range of outcomes.
 			      </p>
 			    </div>
 			    <div id="op-chart" class="tab-pane fade">
@@ -933,33 +931,30 @@ footer {
 			      <h6>($ in thousands)</h6>			      
 			      <div id="chart_op"></div>
 				  	<hr>
-				  	<p>Here we define profit as 
-					  	<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Earnings Before Interest, Taxes, Depreciation, Amortization.  EBITDA = Revenue - Expenses (excluding tax, interest, depreciation and amortization).">EBITDA</a>
-				  	.  It is a common metric to assess a company’s profitability.   It excludes expenses related to financing and accounting decisions so can be used to compare profitability between companies making it popular among investors and lenders.</p>
+				  	<p><b>ProTip:</b>
+					  	<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Earnings Before Interest, Taxes, Depreciation, Amortization.  EBITDA = Revenue - Expenses (excluding tax, interest, depreciation and amortization).">EBITDA</a> is a common way to measure a company’s profitability.  It is frequently used by investors, lenders and analysts to compare profitability between companies (<a href="#" class="tooltiptarget" data-toggle="tooltip" title="EBITDA excludes expenses from a company's financing and accounting decisions that differ between companies but don't relate to its core business">why</a>?).</p>
 			    </div>
 			    <div id="cf-chart" class="tab-pane fade">
 			      <h3>Cash flow</h3>
 			      <h6>($ in thousands)</h6>
 			      <div id="chart_cf"></div>
 			      <hr>
-			      <p>The amount of cash moving into and out of the company in a specific period.  Cash flow forecasting is critical to make sure there is enough cash to pay expenses and debts. And get a sense if the profitability matter – could be profitable but losing money.  <a href="#cf">Learn more>></a>
-			      </p>
+			      <p><b>ProTip:</b> Companies can profitable but still losing money.  Cash flow includes financing and investing outflows that can be large but are excluded from profit or net income.  Cash flow is the real bottom line.  <small><a href="#">Why cash flow matters</a></small></p>
 			    </div>
 			    <div id="bs-chart" class="tab-pane fade">
 			      <h3>Cash and debt balances</h3>
-			      <h6>($ in thousands)</h6>
+			      <h6>($ in thousands, end of year)</h6>
 			      <div id="chart_bs"></div>
 			      <hr>
-			      <p>Forecasting a cash balance is important to insure sufficient cash to pay all expenses and financing obligations in the future.  Debt balances have been included for reference where applicable.  Many recommend having at least 3 months worth of expenses cash on hand at any time.
+			      <p><b>ProTip:</b> Many recommend keeping enough cash on hand to cover at least 3 months of expenses at any time.  If your 'downside' case results in a cash balance lower than this, or <code>negative</code>, consider a contingency plan to trim expenses.  <small><a href="#">More tips</a></small>
 			      </p>
 			    </div>
 			    <div id="val-chart" class="tab-pane fade">
 			      <h3>Company value (<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Theoretical takeover price if a company were to be bought.  Commonly viewed as most accurate value of total company.  Different than value of the equity (Equity Value)">Enterprise value</a>)</h3>
-			      <h6>($ in thousands)</h6>
+			      <h6>($ in thousands, valuation as of beginning of year 5)</h6>
 				  <div id="chart_val"></div>
 				  <hr>
-			      <p>Companies are frequently valued on a comparables (“comps”) approach.  This approach takes similar companies with clear market values (e.g. publicly-listed, recently acquired) and divides their value by a metric (e.g. revenue) to create a ratio (value/revenue).  This metric is averaged across the group then applied to the metric of the target company: metric x multiple = valuation.  We’ve valued your company based on three common ways revenue multiples, <span style="border-bottom: 1px dotted">EBITDA</span>  multiples and <span style="border-bottom: 1px dotted">unlevered FCF</span> multiples.  Its common to make a range. <a href="/faq#collapse3">Learn more>></a>
-			      </p>
+			      <p><b>ProTip:</b> Companies are frequently valued with the comparables (“comps”) approach (<small><a href="#">learn more</a></small>).  We’ve used this approach to value your company at the <u>beginning</u> of year 5 (<a href="#" class="tooltiptarget" data-toggle="tooltip" title="Valuation is based on the forecast for the next-12-months ('NTM').  Year 5 is our last forecast year so using them for NTM would value the company at the beginning of year 5">why</a>?).  ILLUSTRATIVE,  Disclaimers^10,  Don't sue us.</p>
 			    </div>
 	        </div>
         </div>
@@ -969,7 +964,7 @@ footer {
 	<!-- Container (table) -->
 	<div class="col-sm-12">
       <div class="panel panel-default">
-	    <div class="panel-heading">Tables</div>  
+	    <div class="panel-heading">Summary financials</div>  
 	      <div class="panel-heading">
 		      <ul class="nav nav-pills">
 				<li class="active"><a data-toggle="pill" href="#is-table">P&L</a></li>
