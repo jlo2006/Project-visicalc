@@ -562,13 +562,21 @@
       font: 400 15px Roboto, sans-serif;
       line-height: 1.8;
       color: rgba(0,  0,  0, 0.54);
-      background-color: #FAFAFA;
+      background-color: #DCEDC8;
   }
   
   a.tooltiptarget {
   	  text-decoration: none;
 	  border-bottom: 1px dotted;
 	  color: inherit;
+  }
+  
+  a {
+	  color: #689F38;
+  }
+  
+  a:hover {
+	  text-decoration: none;
   }
   
   input {
@@ -595,14 +603,8 @@
   
   .panel {
       border: 1px solid rgba(0,0,0, .12); 
-      border-radius:0 !important;
-      transition: box-shadow 0.5s;
   }
   
-  
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
   .panel-footer .btn:hover {
       border: 1px solid #40C4FF;
       background-color: #fff !important;
@@ -611,11 +613,9 @@
 
   .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
   		background-color:#689F38;
-  		border-radius: 0;
 	}
   
   .btn-default {
-	  border-radius: 0;
 	}
 
   .panel-footer {
@@ -638,7 +638,6 @@
       font-size: 14px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 2px;
-      border-radius: 0;
       font-family: Roboto, sans-serif;
   }
   .navbar li a, .navbar .navbar-brand {
@@ -705,8 +704,7 @@ footer {
   </style>
 </head>
 
-<body>
-<!--<body onload="update(), drawRev(), drawBs(), drawOp(), drawCf(), drawVal()">-->
+<body onload="update(), drawRev(), drawBs(), drawOp(), drawCf(), drawVal()">
 
 <!-- Container (navbar) -->
 <nav class="navbar navbar-default navbar-fixed-top">
