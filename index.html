@@ -52,7 +52,8 @@
   .jumbotron {
 	  background-color: #689F38;
 	  color: #fff;
-	  padding: 100px 25px;
+	  padding: 125px 25px;
+	  margin:0;
   }
   
   .container-fluid {
@@ -60,12 +61,38 @@
   }
   .bg-grey {
       background-color: #F5F5F5;
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .bg-litegreen {
+      background-color: #DCEDC8;
   }
   
+  .tile {
+
+	  padding: 30px;
+	  border-radius: 4px;
+	  /*border: 1px solid rgba(0,0,0,0.12);*/
+	  margin: 10px;
+  }
+  
+  .blue {
+	  background-color: #40C4FF;
+	  color: white;
+  }  
+
+  .green {
+	  background-color: #8BC34A;
+	  color: white;
+  }
+  
+  .drkgreen {
+	  background-color: #689F38;
+	  color: white;
+  }
+    
   .panel {
       border: 1px solid rgba(0,0,0, .12); 
-      border-radius:0 !important;
+      /*border-radius:0 !important;*/
       transition: box-shadow 0.5s;
   }
   
@@ -81,11 +108,11 @@
 
   .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
   		background-color:#689F38;
-  		border-radius: 0;
+  		/*border-radius: 0;*/
 	}
   
   .btn-default {
-	  border-radius: 0;
+	  /*border-radius: 0;*/
   }
   
   .btn-cta {
@@ -114,7 +141,7 @@
       font-size: 14px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 2px;
-      border-radius: 0;
+      /*border-radius: 0;*/
       font-family: Roboto, sans-serif;
   }
   .navbar li a, .navbar .navbar-brand {
@@ -136,7 +163,27 @@
   li.title {
 	  font-weight: 700;
   }
+  
+  .list-lp {
+	  list-style-type: none;
+	  font-size: 1.1em;
+	  padding-left: 30px;
+  }
 
+  .list-lp li {
+	  display:block;
+	  padding-bottom: 20px;
+  }
+
+  .list-lp li:before {
+	content: "\e080";
+    font-family: 'Glyphicons halflings';
+    font-size: 12px;
+    float: left;
+    margin-top: 5px;
+    margin-left: -30px;
+  }
+  
 .tdvalues {
 	text-align: right;
 }
@@ -168,6 +215,26 @@ footer {
 	color: #fff;
 }
 
+.logo {
+	font-size: 60px;
+	color: #8BC34A;
+}
+
+.logo-lg {
+	font-size: 150px;
+	color: #8BC34A;
+}
+
+.logo-white {
+	font-size: 250px;
+	color: white;
+}
+
+.img-center {
+	text-align: center;
+	padding: 50px 30px;
+	
+}
 
   @media screen and (max-width: 768px) {
     .col-sm-4 {
@@ -217,59 +284,127 @@ footer {
 
 <!-- Container (jumbotron) -->
 <div class="jumbotron text-center">
-	<h1>Planning sucks</h1>
-	<p>Let's fix it</p>
+	<h1>Planning sucks.  Let's fix it!</h1>
+	<h2>Simple planning tools for lean organizations</h2>
 	<a href="/example" class="btn btn-default btn-lg btn-cta" role="button">Try it now!</a>
 </div>
 
-<!-- Container (simple) -->
-<div class="container-fluid">
+<!-- Container (use cases) -->
+<div id="uses" class="container-fluid bg-grey">
+	<h1>Why plan?</h1>
+	<p>"If you fail to plan, you are planning to fail." - Benjamin Franklin.  Simple financial forecasting can go a long way, even if things change rapidly or are uncertain.</p>
+	<br>
 	<div class="row">
-	    <div class="col-sm-8">
-	      <h2>Simple</h2>
-	      <p>Don't know where to start? No problem. Answer some questions and we build the model for you. No finance knowledge necessary.</p>
+	    <div class="col-sm-4">
+		    <div class="tile text-center">
+			<span class="glyphicon glyphicon-usd logo"></span>
+			<h2>Manage cash</h2>
+			<p>Make sure you don’t run out of money tomorrow and when/if you’ll need to raise more</p>
+		    </div>
 	    </div>
 	    <div class="col-sm-4">
-	      <img src="images/Simple.png" alt="simpleicon" style="width:250px; height:100%">
-	    </div>
-	</div>
-</div>
-
-<!-- Container (clear) -->
-<div class="container-fluid bg-grey">
-	<div class="row">
-	    <div class="col-sm-4 text-right">
-	      <img src="images/Clear.png" alt="clearicon" style="width:250px; height:100%">
-	    </div>
-	    <div class="col-sm-8">
-	      <h2>Clear</h2>
-	      <p>A picture is worth a thousand numbers, but most financial charts are confusing. We create charts you can actually understand.</p>
-	    </div>
-	</div>
-</div>
-
-<!-- Container (collaborative) -->
-<div class="container-fluid">
-	<div class="row">
-	    <div class="col-sm-8">
-	      <h2>Collaborative</h2>
-	      <p>Planning isn't done alone, but sending spreadsheets around is inefficient. We streamline sharing to reduce errors and iterations.</p>
+		    <div class="tile text-center">
+			<span class="glyphicon glyphicon-transfer logo"></span>
+			<h2>Allocate spending</h2>
+			<p>Let your team know what each can spend while insuring you can cover all costs</p>
+		    </div>
 	    </div>
 	    <div class="col-sm-4">
-	      <img src="images/Collaboration.png" alt="collaborateicon" style="width:250px; height:100%">
+		    <div class="tile text-center">
+			<span class="glyphicon glyphicon-piggy-bank logo"></span>
+			<h2>Get financing</h2>
+			<p>Investors, lenders, potential acquirers need forecasts to evaluate their investment and anchor valuation</p>
+		    </div>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-sm-4">
+		    <div class="tile text-center">
+			<span class="glyphicon glyphicon-road logo"></span>
+			<h2>Plan ahead</h2>
+			<p>Hiring, office space, inventory require lead time.  Know when you'll need (or can afford) them</p>
+		    </div>
+	    </div>
+	    <div class="col-sm-4">
+		    <div class="tile text-center">
+			<span class="glyphicon glyphicon-list-alt logo"></span>
+			<h2>Set goals</h2>
+			<p>Align everyone on concrete goals and think through the details to reach them.  Create accountability.</p>
+		    </div>
+	    </div>
+	    <div class="col-sm-4">
+		    <div class="tile text-center">
+			<span class="glyphicon glyphicon-retweet logo"></span>
+			<h2>ROI</h2>
+			<p>Put some numbers behind where you're planning to invest resources to estimate return on investment</p>
+		    </div>
 	    </div>
 	</div>
 </div>
 
-<!-- Container (fast) -->
-<div class="container-fluid bg-grey">
-	<div class="row">
-	    <div class="col-sm-4 text-right">
-	      <img src="images/Fast.png" alt="fasticon" style="width:200px; height:100%">
+
+<!-- Container (process) -->
+<div class="container-fluid green">
+	<h1>How it works</h1>
+	<p>Simple. Clear. Fast. Flexible.
+	<br>
+	<div class="row tile">
+	    <div class="col-sm-5 img-center">
+	      <span class="glyphicon glyphicon-question-sign logo-white"></span>
 	    </div>
-	    <div class="col-sm-8">
-	      <h2>Fast</h2>
-	      <p>Things change rapidly and keeping up is exhausting. We help you plan for whatever lies ahead with nimble models that are quick and easy to update.</p>
+	    <div class="col-sm-7">
+	      <h2>Answer questions</h2>
+	      <br>
+	      <ul class="list-lp">
+		      <li>Provide some rough estimates to our questions, we'll do the rest.</li>
+		      <li>Less is more.  We focus on what matters and include a buffer for uncertainty.</li>
+		      <li>Need guidance? tips, explanations and data provided.  See our <a href="/faq">FAQ</a>.</li>
+	      </ul>
+	    </div>
+	</div>
+
+	<div class="row tile">
+	    <div class="col-sm-7">
+	      <h2>Get answers</h2>
+	      <br>
+	      <ul class="list-lp">
+		      <li>Your forecast is created immediately.  Make changes and see results in real time.</li>
+		      <li>Actually understand your data with clear charts.  Share them with others to tell your story.</li>
+		      <li>Not just a helpful forecast but also an illustrative future valuation of your company (for fun!)</li>
+	      </ul>
+	    </div>
+	    <div class="col-sm-5 img-center">
+	      <span class="glyphicon glyphicon-signal logo-white"></span>
+	    </div>
+	</div>
+
+	<div class="row tile">
+	    <div class="col-sm-5 img-center">
+	      <span class="glyphicon glyphicon-refresh logo-white"></span>
+	    </div>
+	    <div class="col-sm-7">
+	      <h2>Repeat</h2>
+	      <br>
+	      <ul class="list-lp">
+		      <li>Easily update forecasts whenever things change, it only takes a minute</li>
+		      <li>Quickly run multiple scenarios to see a range of possible futures</li>
+		      <li>Tweak estimates to see what you need to believe to meet financial goals</li>		      
+	      </ul>
+	    </div>
+	</div>
+</div>
+
+<!-- Container (cost) -->
+<div id="uses" class="container-fluid bg-grey">
+	<h1>What does it cost?</h1>
+	<br>
+	<div class="row tile">
+	    <div class="col-sm-12 text-center">
+		    <h2>Completely free...for now...</h2>
+			<br>
+			<h2>we haven't built billing...take advantage of it while it lasts</h2>
+			<br>
+			<span class="glyphicon glyphicon-thumbs-up logo-lg"></span>
 	    </div>
 	</div>
 </div>
