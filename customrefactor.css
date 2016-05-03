@@ -12,6 +12,14 @@
 	  color: inherit;
   }
   
+  a {
+	  color: #689F38;
+  }
+  
+  a:hover {
+	  text-decoration: none;
+  }
+  
   input {
 	  border: none;
 	  border-bottom: 1px solid rgba(0,0,0, 0.12);
@@ -45,12 +53,17 @@
   .container-fluid {
       padding: 60px 50px;
   }
+  
   .bg-grey {
       background-color: #F5F5F5;
   }
 
   .bg-litegreen {
       background-color: #DCEDC8;
+  }
+  
+  .bg-white {
+      background-color: #fff;
   }
   
   .tile {
@@ -78,7 +91,6 @@
     
   .panel {
       border: 1px solid rgba(0,0,0, .12); 
-      /*border-radius:0 !important;*/
       transition: box-shadow 0.5s;
   }
   
@@ -94,7 +106,6 @@
 
   .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
   		background-color:#689F38;
-  		/*border-radius: 0;*/
 	}
   
   .btn-default {
